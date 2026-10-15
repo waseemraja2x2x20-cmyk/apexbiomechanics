@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0c0d12" />
+    <title>Apex Biomechanics — Your movement, decoded</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <a class="brand" href="#today" aria-label="Apex Biomechanics home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>APEX<span class="brand-light">/BIO</span></span>
+        </a>
+        <p class="nav-caption">YOUR WORKSPACE</p>
+        <nav class="side-nav">
+          <a class="nav-item active" href="#today" data-section="today"><span class="nav-icon">◫</span>Today</a>
+          <a class="nav-item" href="#scan" data-section="scan"><span class="nav-icon">◎</span>Scan AI<span class="nav-new">LIVE</span></a>
+          <a class="nav-item" href="#exercises" data-section="exercises"><span class="nav-icon">↗</span>Exercises</a>
+          <a class="nav-item" href="#telemetry" data-section="telemetry"><span class="nav-icon">⌁</span>Telemetry</a>
+          <a class="nav-item" href="#bio-gear" data-section="bio-gear"><span class="nav-icon">▱</span>Bio-Gear</a>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="streak-card">
+            <span class="streak-icon">✳</span>
+            <div><strong>4 day streak</strong><small>Consistency is strength.</small></div>
+            <span class="streak-dots" aria-hidden="true">● ● ● ● ○ ○ ○</span>
+          </div>
+          <button class="profile-button" type="button" aria-label="Open Alex Morgan profile">
+            <span class="avatar">AM</span><span><strong>Alex Morgan</strong><small>APEX PRO</small></span><span class="more">···</span>
+          </button>
+        </div>
+      </aside>
+
+      <main id="today" class="main-content">
+        <header class="topbar">
+          <div class="breadcrumb"><span>WORKSPACE</span><span class="crumb-sep">/</span><strong>TODAY</strong></div>
+          <div class="topbar-actions">
+            <span class="date-label"><span class="live-dot"></span> THURSDAY, OCT 15</span>
+            <button class="icon-button notification-button" type="button" aria-label="Notifications">♧<i></i></button>
+          </div>
+        </header>
+
+        <section class="welcome-row">
+          <div>
+            <p class="eyebrow">YOUR BODY. YOUR DATA. YOUR EDGE.</p>
+            <h1>Good morning, Alex <span class="wave">✳</span></h1>
+            <p class="welcome-subtitle">A little movement now makes a big difference later.</p>
+          </div>
+          <div class="system-status"><span class="live-dot"></span> ALL SYSTEMS OPTIMAL <span class="status-divider">·</span> <span id="clock">READY WHEN YOU ARE</span></div>
+        </section>
+
+        <div class="filter-row" role="group" aria-label="Filter dashboard systems">
+          <span class="filter-label">FOCUS</span>
+          <button class="filter-pill selected" type="button" data-filter="all" aria-pressed="true">All systems <span>05</span></button>
+          <button class="filter-pill" type="button" data-filter="desk" aria-pressed="false">Desk relief <span>02</span></button>
+          <button class="filter-pill" type="button" data-filter="strength" aria-pressed="false">Strength &amp; gym <span>02</span></button>
+          <span class="filter-hint"><span class="sparkle">✦</span> YOUR DAILY SNAPSHOT</span>
+        </div>
+
+        <div class="dashboard-grid">
+          <section class="panel scan-panel" id="scan" data-tags="desk strength">
+            <div class="panel-heading">
+              <div><span class="section-kicker"><span class="live-dot"></span> OPTICAL AI CHAMBER</span><h2>Your posture, in real time.</h2></div>
+              <span class="zero-hardware">ZERO HARDWARE</span>
+            </div>
+            <div class="scan-stage">
+              <div class="scan-grid" aria-hidden="true"></div>
+              <div class="scan-corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+              <div class="scan-label label-top"><span class="live-dot"></span> LIVE CV TRACKING <span class="scan-time">00:14</span></div>
+              <svg class="scan-person" viewBox="0 0 220 270" role="img" aria-label="Optical scan silhouette with tracked skeletal landmarks">
+                <defs><linearGradient id="personGlow" x1="0" x2="1"><stop stop-color="#d84751" stop-opacity=".18"/><stop offset="1" stop-color="#f4777c" stop-opacity=".5"/></linearGradient></defs>
+                <path d="M108 27c-20 0-32 15-32 34 0 19 13 33 32 33s32-14 32-33c0-19-12-34-32-34Zm-42 78c-19 9-29 28-32 53l-8 75c-2 13 17 17 21 3l16-63-3 82c0 17 22 18 24 1l9-69 9 69c2 17 24 16 24-1l-3-82 16 63c4 14 23 10 21-3l-8-75c-3-25-13-44-32-53l-24-8-24 8Z" fill="url(#personGlow)" stroke="#e87b80" stroke-opacity=".72" stroke-width="1.4"/>
+                <path d="M109 96v68m-36-55 36 13 36-13M73 126l36 12 36-12m-36 26-25 21m25-21 25 21" fill="none" stroke="#fa898d" stroke-opacity=".68" stroke-width="1"/>
+                <g fill="#ff646e" stroke="#ffc1c2" stroke-width="1"><circle cx="108" cy="42" r="3"/><circle cx="108" cy="91" r="3"/><circle cx="73" cy="108" r="3"/><circle cx="145" cy="108" r="3"/><circle cx="108" cy="123" r="3"/><circle cx="108" cy="150" r="3"/><circle cx="83" cy="171" r="3"/><circle cx="133" cy="171" r="3"/><circle cx="66" cy="210" r="3"/><circle cx="150" cy="210" r="3"/></g>
+              </svg>
+              <div class="scan-readout readout-left"><small>CERVICAL ANGLE</small><strong>14.3°</strong><span>C-CURVE</span></div>
+              <div class="scan-readout readout-right"><small>THORACIC SHEAR</small><strong>0.42 <em>kN</em></strong><span>WITHIN RANGE</span></div>
+              <div class="scan-footer"><span class="scan-point"></span> 10 LANDMARKS LOCKED <span>•</span> CAMERA READY</div>
+            </div>
+            <div class="scan-bottom">
+              <div class="slouch-readout"><span class="slouch-icon">⌁</span><span><small>SLOUCH INDEX</small><strong>Grade 2 <i>MODERATE</i></strong></span></div>
+              <div class="scan-actions">
+                <button class="button button-primary" type="button" data-action="scan">Launch 60s live scan <span>↗</span></button>
+                <button class="button button-quiet" type="button" data-action="diagnostic">Instant desk diagnostic</button>
+              </div>
+            </div>
+            <p class="hardware-note"><span>ⓘ</span> Prop your phone against a coffee mug or water bottle — no dedicated hardware needed.</p>
+          </section>
+
+          <section class="panel telemetry-panel" id="telemetry" data-tags="strength">
+            <div class="panel-heading">
+              <div><span class="section-kicker">3D BIOMECHANICS STUDIO</span><h2>Muscle in motion.</h2></div>
+              <button class="more-button" type="button" aria-label="More telemetry options">···</button>
+            </div>
+            <div class="muscle-stage">
+              <div class="muscle-glow"></div>
+              <svg class="muscle-figure" viewBox="0 0 190 220" role="img" aria-label="Anatomical muscle visualization with active striations">
+                <defs><linearGradient id="muscleFill" x1="0" x2="1"><stop stop-color="#552329"/><stop offset=".52" stop-color="#d5575d"/><stop offset="1" stop-color="#66252b"/></linearGradient></defs>
+                <path d="M95 16c-13 0-21 10-21 23 0 11 8 19 21 19s21-8 21-19c0-13-8-23-21-23Zm-27 47c-15 5-23 17-26 34l-8 45c-2 9 10 12 13 3l10-33-2 70c0 11 15 12 16 1l6-52 6 68c1 10 14 10 15 0l6-68 6 52c1 11 16 10 16-1l-2-70 10 33c3 9 15 6 13-3l-8-45c-3-17-11-29-26-34l-19-6-19 6Z" fill="url(#muscleFill)" stroke="#ff8c8e" stroke-opacity=".6" stroke-width="1.3"/>
+                <path d="M70 72c9 9 13 22 11 40m39-40c-9 9-13 22-11 40M71 120l24 10 24-10M95 64v94m-19 4 19-10 19 10m-41-29 15 8m33-8-15 8" fill="none" stroke="#ffacaa" stroke-opacity=".75" stroke-width="2" stroke-linecap="round"/>
+                <g fill="#ff777b"><circle cx="95" cy="63" r="2.5"/><circle cx="80" cy="109" r="2.5"/><circle cx="110" cy="109" r="2.5"/><circle cx="95" cy="130" r="2.5"/></g>
+              </svg>
+              <span class="muscle-label label-hamstring">HAMSTRINGS <b>96%</b></span>
+              <span class="muscle-label label-lat">LATISSIMUS <b>91%</b></span>
+              <span class="muscle-label label-serratus">SERRATUS <b>78%</b></span>
+              <span class="muscle-view">POSTERIOR VIEW <span>◉</span></span>
+            </div>
+            <div class="telemetry-stats">
+              <div><small>SPINE ELONGATION</small><strong>135.0<span>°</span></strong></div>
+              <div><small>PELVIC TILT INDEX</small><strong>4.68<span>°</span></strong></div>
+            </div>
+            <div class="panel-actions">
+              <button class="button button-primary" type="button" data-action="rep">Start 45s rep flow <span>↗</span></button>
+              <button class="button button-quiet" type="button" data-action="coach">◖ Listen to AI audio form coach</button>
+            </div>
+          </section>
+
+          <section class="panel resets-panel" id="desk-relief" data-tags="desk">
+            <div class="panel-heading">
+              <div><span class="section-kicker">DESK WORKER MICRO-RESETS</span><h2>Break the slouch cycle.</h2></div>
+              <label class="shield-toggle"><input id="shield-toggle" type="checkbox" checked /><span class="toggle-track"></span><span>Slouch Shield <b>ON</b></span></label>
+            </div>
+            <div class="reset-summary"><span class="shield-symbol">⌁</span><span><strong>Your workday, protected.</strong><small>3 of 5 movement breaks completed today</small></span><span class="progress-ring">60%</span></div>
+            <div class="reset-list">
+              <button class="reset-item" type="button" data-action="reset">
+                <span class="reset-number">01</span><span class="reset-main"><strong>Cervical Chin Tuck</strong><small>45s <i>•</i> seated</small></span><span class="reset-benefit"><b>−38%</b><small>disc pressure</small></span><span class="reset-arrow">↗</span>
+              </button>
+              <button class="reset-item" type="button" data-action="reset">
+                <span class="reset-number">02</span><span class="reset-main"><strong>Seated Piriformis Reset</strong><small>60s <i>•</i> chair-only</small></span><span class="reset-benefit"><b>+12mm</b><small>lumbar space</small></span><span class="reset-arrow">↗</span>
+              </button>
+              <button class="reset-item" type="button" data-action="reset">
+                <span class="reset-number">03</span><span class="reset-main"><strong>Doorway Pectoral Opener</strong><small>50s <i>•</i> standing</small></span><span class="reset-benefit"><b>85%</b><small>rhomboid use</small></span><span class="reset-arrow">↗</span>
+              </button>
+            </div>
+            <button class="hack-card" type="button" data-action="hacks"><span class="hack-icon">⌂</span><span><small>THE $0 HOUSEHOLD BIO-HACKS</small><strong>Rolled towel lumbar roll + shoebox screen riser</strong></span><span class="hack-arrow">↗</span></button>
+          </section>
+
+          <section class="panel exercise-panel" id="exercises" data-tags="strength">
+            <div class="panel-heading">
+              <div><span class="section-kicker">CROSS-DISCIPLINE VIDEO VAULT</span><h2>Move with intention.</h2></div>
+              <button class="text-link" type="button" data-action="vault">VIEW ALL <span>↗</span></button>
+            </div>
+            <div class="exercise-grid">
+              <button class="exercise-card deadlift" type="button" data-action="exercise">
+                <span class="exercise-chip">STRENGTH</span><span class="exercise-figure" aria-hidden="true">╱●╲</span><span class="play-button">▶</span><span class="exercise-info"><strong>Conventional Deadlift</strong><small>BAR PATH <i>•</i> HAMSTRING FOCUS</small></span>
+              </button>
+              <button class="exercise-card plank" type="button" data-action="exercise">
+                <span class="exercise-chip">STRENGTH</span><span class="exercise-figure" aria-hidden="true">━◉━</span><span class="play-button">▶</span><span class="exercise-info"><strong>Isometric Push-Up Plank</strong><small>TORso RIGIDITY <i>•</i> PECTORALIS</small></span>
+              </button>
+              <button class="exercise-card squat" type="button" data-action="exercise">
+                <span class="exercise-chip">GYM</span><span class="exercise-figure" aria-hidden="true">◉┳◉</span><span class="play-button">▶</span><span class="exercise-info"><strong>Barbell Back Squat</strong><small>VMO STRIATIONS <i>•</i> 104° DEPTH</small></span>
+              </button>
+              <button class="exercise-card yoga" type="button" data-action="exercise">
+                <span class="exercise-chip">YOGA</span><span class="exercise-figure" aria-hidden="true">♧</span><span class="play-button">▶</span><span class="exercise-info"><strong>Crow Pose / Bakasana</strong><small>ARM BALANCE <i>•</i> SERRATUS PRESS</small></span>
+              </button>
+            </div>
+          </section>
+
+          <section class="panel shop-panel" id="bio-gear" data-tags="desk strength">
+            <div class="panel-heading">
+              <div><span class="section-kicker">PRESCRIBED BIO-GEAR</span><h2>Tools that move you forward.</h2></div>
+              <button class="text-link" type="button" data-action="shop">SHOP ALL <span>↗</span></button>
+            </div>
+            <div class="pro-banner"><span class="pro-gem">✦</span><span><strong>Apex Pro members save 25%</strong><small>Gear matched to your scan diagnostics</small></span><span class="pro-cta">UNLOCK <b>→</b></span></div>
+            <div class="product-row">
+              <button class="product-card" type="button" data-action="product"><span class="product-art mobility-art"><i></i><i></i><i></i></span><span class="product-name">Spine Reset Mobility Kit</span><span class="product-price">$19 <small>→</small></span></button>
+              <button class="product-card" type="button" data-action="product"><span class="product-art pack-art"><i></i><i></i></span><span class="product-name">Lumbar Decompression Pack</span><span class="product-price">$39 <small>→</small></span></button>
+              <button class="product-card" type="button" data-action="product"><span class="product-art flask-art"><i></i></span><span class="product-name">Daily Align Hydration Cell</span><span class="product-price">$29 <small>→</small></span></button>
+            </div>
+          </section>
+
+          <section class="panel social-panel" id="share" data-tags="desk">
+            <div class="social-copy"><span class="section-kicker">SHARE YOUR MOVEMENT</span><h2>Make good posture<br />a little contagious.</h2><p>Five seconds. One scan. Start a better kind of challenge.</p><button class="button button-primary share-button" type="button" data-action="challenge">Start 5-second tech-neck challenge <span>↗</span></button></div>
+            <div class="story-preview"><span class="story-top"><span>APEX <b>/BIO</b></span><span>YOUR MOVE · 00:05</span></span><span class="story-orbit"></span><span class="story-score">14.3°<small>TECH-NECK SCORE</small></span><span class="story-foot">SMALL MOVES. STRONGER DAYS.</span></div>
+            <div class="social-actions"><button type="button" data-action="export">▣ Export IG biomechanics slide</button><button type="button" data-action="share">↗ Share to story</button></div>
+          </section>
+        </div>
+        <footer class="page-footer"><span>APEX / BIO <i>·</i> MOVE BETTER, EVERY DAY.</span><span>YOUR MOVEMENT DATA STAYS YOURS <span class="privacy-dot">●</span></span></footer>
+      </main>
+    </div>
+
+    <nav class="mobile-dock" aria-label="Primary navigation">
+      <a class="dock-item active" href="#today" data-section="today"><span>◫</span>Today</a>
+      <a class="dock-item" href="#scan" data-section="scan"><span>◎</span>Scan AI</a>
+      <a class="dock-item" href="#exercises" data-section="exercises"><span>↗</span>Exercises</a>
+      <a class="dock-item" href="#telemetry" data-section="telemetry"><span>⌁</span>Telemetry</a>
+      <a class="dock-item" href="#bio-gear" data-section="bio-gear"><span>▱</span>Bio-Gear</a>
+    </nav>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
