@@ -1,0 +1,18 @@
+import { chromium } from 'playwright';
+import assert from 'node:assert/strict';
+const browser=await chromium.launch({headless:true,args:['--no-sandbox','--use-fake-device-for-media-stream','--use-fake-ui-for-media-stream']});
+const page=await browser.newPage();
+await page.route('**/api/history',r=>r.fulfill({json:{profile:{name:'',shield:'off'},history:[]}}));
+const errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.goto(process.env.APEX_TEST_URL || 'http://localhost:8889');
+await page.locator('[data-action="scan"]').click();
+await page.waitForFunction(()=>document.querySelector('#camera-status').textContent.includes('ready') || document.querySelector('#retry-camera').hidden===false, {},{timeout:60000});
+await page.waitForTimeout(5000);
+if (await page.locator('#retry-camera').isVisible()) throw new Error(await page.locator('#camera-status').textContent());
+console.log(await page.locator('#camera-status').textContent());
+assert.deepEqual(errors,[]);
+await page.evaluate(() => { window.__apexTestTrack = document.querySelector('#camera-video').srcObject.getVideoTracks()[0]; });
+await page.locator('#close-camera').click();
+assert.equal(await page.evaluate(() => window.__apexTestTrack.readyState), 'ended');
+console.log('Real MediaPipe model inference and camera cleanup passed.');
+await browser.close();

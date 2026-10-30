@@ -1,3 +1,4 @@
 [build]
-  command = "echo 'Static site, no build step'"
+  # Override the obsolete dashboard command: this static site needs no build.
+  command = ""
   publish = "."
