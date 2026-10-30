@@ -1,4 +1,4 @@
 [build]
-  # Override the obsolete dashboard command: this static site needs no build.
-  command = ""
-  publish = "."
+  # Override dashboard settings and generate the configured deploy directory.
+  command = "npm run build"
+  publish = "public"

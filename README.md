@@ -5,13 +5,15 @@
 its an app which deal with physcial fitness thought latest technology
 
 Deployment uses the root `netlify.toml` configuration. This is a static HTML,
-CSS, and JavaScript site: the build command is intentionally empty and the
-publish directory is the repository root (`.`). Jekyll is not required.
+CSS, and JavaScript site: `npm run build` copies its public assets into `public`,
+the configured publish directory. Jekyll is not required. The explicit command
+overrides the obsolete dashboard setting. Backend sources and development files
+are excluded from the published directory.
 
 ## Live features
 
 The frontend remains plain HTML, CSS and browser JavaScript. `netlify.toml`
-still publishes the repository root with an empty build command. No framework,
+publishes the generated `public` directory. No framework,
 paid AI service, user-supplied API key, or frontend compilation is required.
 
 Camera access requires HTTPS (or localhost) and permission. MediaPipe Tasks
@@ -77,7 +79,8 @@ Managed Netlify services follow the site's free-plan usage limits.
 ## Verification
 
 Run `npm ci` and `npm test` for angle boundaries, rep hysteresis and tracking-loss
-behavior, and server-side summary validation. No build command is needed.
+behavior, and server-side summary validation. `npm run build` prepares the static
+files for deployment without frontend compilation.
 For local browser checks, start `netlify dev --port 8889`. Browser camera access
 and model downloads need a modern browser with WebAssembly support. Real camera
 positioning should be checked on the deploy preview on both a phone and desktop.
