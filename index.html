@@ -7,6 +7,8 @@
     <title>Apex Biomechanics — Your movement, decoded</title>
     <link rel="stylesheet" href="styles.css" />
     <script type="module" src="app.js"></script>
+    <script type="module" src="plan.js"></script>
+    <script type="module" src="nutrition.js"></script>
   </head>
   <body>
     <div class="app-shell">
@@ -21,6 +23,7 @@
           <a class="nav-item" href="#scan" data-section="scan"><span class="nav-icon">◎</span>Scan AI<span class="nav-new">LIVE</span></a>
           <a class="nav-item" href="#exercises" data-section="exercises"><span class="nav-icon">↗</span>Exercises</a>
           <a class="nav-item" href="#telemetry" data-section="telemetry"><span class="nav-icon">⌁</span>Telemetry</a>
+          <a class="nav-item" href="#nutrition" data-section="nutrition"><span class="nav-icon">❦</span>Nutrition</a>
           <a class="nav-item" href="#bio-gear" data-section="bio-gear"><span class="nav-icon">▱</span>Setup</a>
         </nav>
         <div class="sidebar-bottom">
@@ -50,6 +53,12 @@
           <div><small>LATEST SCAN AVERAGE</small><strong id="today-angle">—</strong></div>
           <div><small>LATEST REP FLOW</small><strong id="today-reps">—</strong></div>
           <div><small>TODAY’S MOVEMENT BREAKS</small><strong id="today-breaks">0 / 5</strong></div>
+        </section>
+        <section class="plan-card" id="daily-plan" aria-labelledby="plan-title">
+          <span class="section-kicker">TODAY’S PLAN</span>
+          <h2 id="plan-title">Small steps for today.</h2>
+          <ul></ul>
+          <p class="attribution">Suggestions for general movement and eating habits, based on your saved activity. Not medical advice.</p>
         </section>
         <div class="dashboard-grid">
           <section class="panel scan-panel" id="scan">
@@ -81,6 +90,11 @@
             <p class="session-content" id="exercise-status" role="status">Loading exercise guides…</p><div id="exercise-results" class="exercise-results"></div><div class="catalog-pagination"><button class="button button-quiet" id="exercise-prev" type="button">Previous</button><span id="exercise-page"></span><button class="button button-quiet" id="exercise-next" type="button">Next</button></div>
             <p class="session-content attribution">Source: <a href="https://github.com/yuhonas/free-exercise-db" target="_blank" rel="noopener noreferrer">free-exercise-db</a>, Unlicense. Images load from its public GitHub repository.</p>
           </section>
+          <section class="panel nutrition-panel" id="nutrition">
+            <div class="panel-heading"><div><span class="section-kicker">NUTRITION / EDUCATION</span><h2>Understand your food and your body.</h2></div></div>
+            <div id="nutrition-root" class="nutri-root"><p class="session-content">Loading…</p></div>
+            <p class="session-content attribution">Educational information, not medical advice. For medical conditions, pregnancy, children or a specific diet, talk to a doctor or registered dietitian. No food or product here will cause weight loss or cure any condition.</p>
+          </section>
           <section class="panel shop-panel" id="bio-gear"><div class="panel-heading"><div><span class="section-kicker">USE WHAT YOU HAVE</span><h2>A simple setup.</h2></div></div><div class="session-content"><p>A stable phone support, good lighting and enough space to move are all you need. Place your screen at a comfortable height and change position regularly.</p><p>There is no shop or paid plan here. Stop any movement that causes pain, dizziness or discomfort.</p></div></section>
           <section class="panel social-panel" id="share"><div class="social-copy"><span class="section-kicker">SHARE YOUR MOVEMENT</span><h2>Your own small milestone.</h2><p>Export your latest completed scan or rep flow as a PNG. Only the summary you choose is shared.</p><p id="share-summary">Complete a scan or rep flow to create your result card.</p></div><div class="social-actions"><button type="button" data-action="export" disabled>Download result PNG</button><button type="button" data-action="share" disabled>Share result</button></div></section>
         </div>
@@ -93,6 +107,7 @@
       <a class="dock-item" href="#scan" data-section="scan"><span>◎</span>Scan AI</a>
       <a class="dock-item" href="#exercises" data-section="exercises"><span>↗</span>Exercises</a>
       <a class="dock-item" href="#telemetry" data-section="telemetry"><span>⌁</span>Telemetry</a>
+      <a class="dock-item" href="#nutrition" data-section="nutrition"><span>❦</span>Nutrition</a>
       <a class="dock-item" href="#bio-gear" data-section="bio-gear"><span>▱</span>Setup</a>
     </nav>
     <dialog id="camera-dialog" aria-labelledby="camera-title"><div class="dialog-heading"><h2 id="camera-title">Live scan</h2><button type="button" id="close-camera" aria-label="Cancel session and close camera">Close ×</button></div><p id="camera-instructions">Stand side-on with your ear, shoulder and hip visible. Video stays on your device.</p><div class="camera-stage"><video id="camera-video" autoplay muted playsinline></video><canvas id="camera-canvas" aria-label="Live pose landmarks over your camera view"></canvas></div><div class="live-metrics"><div><small>TIME LEFT</small><strong id="camera-time">—</strong></div><div><small id="metric-label">CERVICAL ANGLE</small><strong id="camera-metric">—</strong></div><div><small id="count-label">SLOUCH INDEX</small><strong id="camera-count" aria-live="polite" aria-atomic="true">—</strong></div></div><p id="camera-status" role="status" aria-live="polite">Camera is idle.</p><p id="camera-cue">Stand comfortably and move within your range.</p><div id="camera-result"></div><button id="save-result" class="button button-primary" type="button" hidden>Retry saving result</button><button id="retry-camera" class="button button-quiet" type="button" hidden>Try camera again</button></dialog>
