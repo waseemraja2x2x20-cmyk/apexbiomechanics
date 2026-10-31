@@ -54,6 +54,14 @@ local midnight using the browser's local date. Slouch Shield is an in-page
 notifications. A latest scan or rep result can be rendered to a 1080px PNG and
 shared using Web Share when file sharing is supported, or downloaded otherwise.
 
+## Nutrition and daily plan
+
+`nutrition.js` adds a Nutrition section with four tabs: eleven nutrient guides (each cites WHO, NHS, Harvard or NIH), a muscle and recovery guide, a calories and protein estimate, and a "My plate" tool. The estimate uses the Mifflin-St Jeor equation, never shows a slow-loss figure below estimated resting needs, and shows no numbers for under-18s or for people who tick the pregnancy or medical-condition box. Body measurements stay in the page and are never saved or sent.
+
+`foods.json` holds 45 common South Asian foods per 100 g and per typical serving. **The values are approximate, rounded figures consistent with USDA FoodData Central. They were entered from reference knowledge and were not checked against the live database, so check them against the source before relying on them.** No food is labelled good or bad and nothing claims to cause weight loss.
+
+`plan.js` builds "Today's plan" from the saved scans, rep flows and breaks that `app.js` already loads (it listens for an `apex:history` event). It reads only and saves nothing.
+
 ## Saved history
 
 As approved, saved history uses Netlify Database rather than localStorage. The

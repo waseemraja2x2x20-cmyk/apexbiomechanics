@@ -46,6 +46,7 @@ function renderHistory() {
   $('rep-summary').textContent = rep ? `Latest flow: ${rep.result.reps} ${rep.result.exercise} reps, ${rep.result.validSeconds.toFixed(1)}s of usable tracking.` : 'No rep sessions yet.';
   $('break-progress').textContent = `${breaks} of 5 movement breaks completed today`;
   $('break-percent').textContent = `${Math.min(100, breaks * 20)}%`;
+  document.dispatchEvent(new CustomEvent('apex:history', { detail: { history, today: dayKey() } }));
   $('session-empty').hidden = history.length > 0;
   $('session-list').replaceChildren(...history.slice(0, 30).map((item) => {
     const li = document.createElement('li');
