@@ -1,4 +1,4 @@
 [build]
-  # Override the obsolete dashboard command: this static site needs no build.
-  command = ""
-  publish = "."
+  # The Netlify dashboard publishes "public", so build that folder instead of relying on an override.
+  command = "npm run build"
+  publish = "public"
